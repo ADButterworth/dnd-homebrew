@@ -1,0 +1,185 @@
+\documentclass[10pt,twoside,twocolumn,nomultitoc,openany,nodeprecatedcode]{dndbook}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{shortvrb}
+\usepackage{booktabs}
+
+\MakeShortVerb{|}
+
+\lstset{%
+	basicstyle=\ttfamily,
+	language=[LaTeX]{TeX},
+	breaklines=true,
+}
+
+\title{DnD Homebrew Reference}
+\author{Aaron B \\ Adam B}
+\date{Version: 09/2020}
+
+\begin{document}
+
+	\maketitle
+	
+	\tableofcontents
+
+	\part{The Meta Guide-Guide}
+	\chapter{General Style}
+	What's up nerd, you've decided to run a DnD campaign huh? Well it's time to learn the homebrew rules, luckily they've all been put in this handy book please keep it up to date with your own so we don't forget them.
+	
+	\section{Section}
+	Sections break up chapters into large groups of associated text.
+	
+	\subsection{Subsection}
+	Subsections further break down the information for the reader.
+	
+	\subsubsection{Subsubsection}
+	Subsubsections are the furthest division of text that still have a block header. Below this level, headers are displayed inline.
+	
+	\paragraph{Paragraph}
+	The paragraph format is seldom used in the core books, but is available if you prefer it to the ``normal'' style.
+	
+	\subparagraph{Subparagraph}
+	The subparagraph format with the paragraph indent is likely going to be more familiar to the reader.
+	
+	\section{Special Sections}
+	The module also includes functions to aid in the proper typesetting of multi-line section headers: |\DndFeatHeader| for feats, |\DndItemHeader| magic items and traps, and |\DndSpellHeader| for spells.
+	
+	\DndFeatHeader{Typesetting Savant}[Prerequisite: \LaTeX{} distribution]
+	You have acquired a package which aids in typesetting source material for one of your favorite games, giving you the following benefits:
+	
+	\begin{itemize}
+		\item You have advantage on Intelligence checks to typeset new content.
+		\item When you fail an Intelligence check to typeset new content, you can ask questions online at the package's website.
+	\end{itemize}
+	
+	\DndItemHeader{Foo's Quill}{Wondrous item, rare}
+	This quill has 3 charges. While holding it, you can use an action to expend 1 of its charges. The quill leaps from your hand and writes a contract applicable to your situation.
+	
+	The quill regains 1d3 expended charges daily at dawn.
+	
+	\DndSpellHeader%
+	{Beautiful Typesetting}
+	{4th-level illusion}
+	{1 action}
+	{5 feet}
+	{S, M (ink and parchment, which the spell consumes)}
+	{Until dispelled}
+	You are able to transform a written message of any length into a beautiful scroll. All creatures within range that can see the scroll must make a wisdom saving throw or be charmed by you until the spell ends.
+	
+	While the creature is charmed by you, they cannot take their eyes off the scroll and cannot willingly move away from the scroll. Also, the targets can make a wisdom saving throw at the end of each of their turns. On a success, they are no longer charmed.
+	
+	\section{Map Regions}
+	The map region functions |\DndArea| and |\DndSubArea| provide automatic numbering of areas.
+	
+	\DndArea{Village of Hommlet}
+	This is the village of hommlet.
+	
+	\DndSubArea{Inn of the Welcome Wench}
+	Inside the village is the inn of the Welcome Wench.
+	
+	\DndSubArea{Blacksmith's Forge}
+	There's a blacksmith in town, too.
+	
+	\DndArea{Foo's Castle}
+	This is foo's home, a hovel of mud and sticks.
+	
+	\DndSubArea{Moat}
+	This ditch has a board spanning it.
+	
+	\DndSubArea{Entrance}
+	A five-foot hole reveals the dirt floor illuminated by a hole in the roof.
+
+	\part{Homebrew Rules}
+	\chapter{Modified Feats}
+	\vspace{1em}
+	\subsection{Great Weapon Master}
+	You've learned to put the weight of a weapon to your advantage, letting its momentum empower your strikes. You gain the following benefit:
+	
+	On your turn, when you score a critical hit with a melee weapon or reduce a creature to 0 hit points with one, you can make one melee weapon attack as a bonus action.
+	
+	\subsection{Sharpshooter}
+	You have mastered ranged weapons and can make shots that others find impossible. You gain the following benefits: 
+	
+	\begin{itemize}
+		\item Attacking at long range doesn't impose disadvantage on your ranged weapon attack rolls. 
+		\item Your ranged weapon attacks ignore half cover and three-quarters cover.
+	\end{itemize}
+
+	\chapter{Combat Changes}
+	\vspace{1em}
+	\subsection{Item Interactions}
+	You can both draw and stow a weapon as a single item interaction. This does not allow you to draw two weapons or stow two weapons in a turn. 
+	
+	\subsection{Two Weapon Fighting}
+	\begin{itemize}
+		\item Removed the ability to make an extra attack as a bonus action.
+		\item When you take the Attack action and attack with a light melee weapon, if you have a different light melee weapon in your other hand you may add that weapon’s damage dice to the damage dealt from the attack.
+		\item Light weapons with a weapon dice of 1d4 can be used to fight in this way with any weapon that is not heavy.
+	\end{itemize}
+
+	\subsection{Surprise}
+	Creatures remain surprised until the end of the first round of combat.
+	
+	\subsection{Tie Resolution}
+	In the case of a tie on a contested skill check, the player wins.
+	
+	\subsection{Spellcasting}
+	You can complete somatic components of a spell with the hand holding your focus even if the spell does not have a material component. 
+	
+	\chapter{Class and Race Changes}
+	\vspace{1em}
+	\subsection{Kenku Language}
+	Languages trait now reads - “You can speak, read and write Common and Auran.”
+	
+	\subsection{Negative Ability Scores}
+	Negative ability score increases have been removed from all races.
+	
+	\subsection{Warlock as Int Caster}
+	When creating a warlock you can choose between Charisma and Intelligence as your primary stat. If you choose Intelligence, replace all instances of the word “Charisma” with “Intelligence” in the Warlock section of the PHB.
+	
+	\subsection{Monk}
+	\subsubsection{Way of the Four Elements}
+	Disciplines of the Elements cost one less ki point to use. 
+	\subsubsection{Way of the Sun Soul}
+	Searing Arc Strike costs one less ki point to use. 
+
+	\subsection{Fighter}
+	\subsubsection{Arcane Archer}
+	Arcane Shot now reads - “You have a number of uses of this ability equal to $1+$ your Intelligence modifier (minimum two), and you regain all expended uses of it when you finish a short or long rest.”
+	
+	\chapter{Other Changes}
+	\subsection{Inspiration}
+	You can spend inspiration to take an action outside of the normal rules of the game. For example, you could choose to dive in front of a blow destined for your ally, blast a hole in a wall with a surge of arcane power, or accomplish a feat of craftsmanship. When you want to spend your inspiration, discuss your desired effect with the DM and they will decide if it is suitable and if there are any additional costs.
+	
+	\chapter{Controversial Resting Rules}
+	\section{Extended Resting}
+	The extended resting rules are intended to show the severity of the wounds that an adventurer can endure, and the labour involved in readying oneself to face the adventuring world again. 
+	
+	Therefore the definition of "rest" can be relaxed to allow more normal downtime activity, simply delaying healing so the effects of arduous journeys or difficult combat can be fully appreciated. 
+	\subsection{Short Rest}
+	A short rest is now around 8 hours of downtime, light activity can be performed such as: reading, talking, eating, or standing watch for no more than 2 hours.
+	
+	\subsection{Long Rest}
+	A long rest is now a period of 72 hours (three days), this definition can be quite lax and simply requires no life-threateningly strenuous activity to be performed. 
+	
+	For example, sparring in a city arena for money could be considered a downtime activity that allows the adventurer to still properly rest.
+
+	\section{Spellcasting}
+	These extended downtimes can effect the utility of spells, with spells such as mage armour being heavily impacted. Therefore if the utility of a spell is negatively impacted by the changes the duration can be modified by the following table:
+	
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{@{}cc@{}}
+			\toprule
+			Current Duration & New Duration \\ \midrule
+			1 minute         & 1 minute     \\
+			1 hour           & 8 hours      \\
+			8 hours          & 3 days       \\
+			1 day            & 1 week       \\ \bottomrule
+		\end{tabular}
+	\end{table}
+
+	\part{Homebrew Creatures}
+\end{document}
